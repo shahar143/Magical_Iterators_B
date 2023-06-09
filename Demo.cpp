@@ -42,5 +42,66 @@ int main() {
     container.removeElement(9);
     std::cout << "Size of container after removing an element: " << container.size() << std::endl;
 
+    container.removeElement(17);
+    std::cout << "Size of container after removing an element: " << container.size() << std::endl;
+
+    std::cout << "Elements in ascending order:\n";
+    for (auto it = ascIter.begin(); it != ascIter.end(); ++it) {
+        std::cout << *it << ' ';   // 2 3 9 17 25
+    }
+    std::cout << std::endl;
+
+    std::cout << "Prime numbers:\n";
+    for (auto it = primeIter.begin(); it != primeIter.end(); ++it) {
+        std::cout << *it << ' ';  // 2 3 17
+    }
+    std::cout << std::endl;
+
+    std::cout << "Elements in cross order:\n";
+    for (auto it = crossIter.begin(); it != crossIter.end(); ++it) {
+        std::cout << *it << ' ';  // 2 25 3 17 9
+    }
+    std::cout << std::endl;
+
+    container.addElement(9);
+
+    std::cout << "Elements in ascending order:\n";
+    for (auto it = ascIter.begin(); it != ascIter.end(); ++it) {
+        std::cout << *it << ' ';   // 2 3 9 17 25
+    }
+    std::cout << std::endl;
+
+    std::cout << "Prime numbers:\n";
+    for (auto it = primeIter.begin(); it != primeIter.end(); ++it) {
+        std::cout << *it << ' ';  // 2 3 17
+    }
+    std::cout << std::endl;
+
+    std::cout << "Elements in cross order:\n";
+    for (auto it = crossIter.begin(); it != crossIter.end(); ++it) {
+        std::cout << *it << ' ';  // 2 25 3 17 9
+    }
+    std::cout << std::endl;
+
+
+    container.addElement(17);
+
+    std::cout << "Elements in ascending order:\n";
+    for (auto it = ascIter.begin(); it != ascIter.end(); ++it) {
+        std::cout << *it << ' ';   // 2 3 9 17 25
+    }
+    std::cout << std::endl;
+
+    std::cout << "Prime numbers:\n";
+    for (auto it = primeIter.begin(); it != primeIter.end(); ++it) {
+        std::cout << *it << ' ';  // 2 3 17
+    }
+    std::cout << std::endl;
+
+    std::cout << "Elements in cross order:\n";
+    for (auto it = crossIter.begin(); it != crossIter.end(); ++it) {
+        std::cout << *it << ' ';  // 2 25 3 17 9
+    }
+    std::cout << std::endl;
     return 0;
 }
