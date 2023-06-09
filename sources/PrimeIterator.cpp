@@ -10,7 +10,12 @@ typedef MagicalContainer::PrimeIterator PrimeIterator;
 
 PrimeIterator::PrimeIterator(MagicalContainer& container): _container(container), current_index(0) {}
 
-PrimeIterator::PrimeIterator(MagicalContainer& container, int index): _container(container), current_index(index) {}
+PrimeIterator::PrimeIterator(MagicalContainer& container, int index): _container(container){
+    if(index < 0 || index > container.p_size()){
+        throw std::out_of_range("PrimeIterator: iterator out of range");
+    }
+    current_index = index;
+}
 
 PrimeIterator::PrimeIterator(const PrimeIterator& other): _container(other._container), current_index(other.current_index) {}
 

@@ -10,8 +10,12 @@ typedef MagicalContainer::AscendingIterator AscendingIterator;
 AscendingIterator::AscendingIterator(MagicalContainer &container)
 : _container(container), current_index(0) {}
 
-AscendingIterator::AscendingIterator(MagicalContainer &container, int index)
-: _container(container), current_index(index) {}
+AscendingIterator::AscendingIterator(MagicalContainer &container, int index): _container(container){
+    if(index < 0 || index > container.size()){
+        throw std::out_of_range("AscendingIterator: iterator out of range");
+    }
+    current_index = index;
+}
 
 AscendingIterator::AscendingIterator(const AscendingIterator& other)
 : _container(other._container), current_index(other.current_index) {}

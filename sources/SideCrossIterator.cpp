@@ -12,7 +12,12 @@ SideCrossIterator::SideCrossIterator(MagicalContainer& container)
 : _container(container), start_or_end(false), index_from_end(container.size()), index_from_start(0), current_index(0) {}
 
 SideCrossIterator::SideCrossIterator(MagicalContainer& container, int index)
-: _container(container), current_index(index), index_from_end(container.size()), index_from_start(0) {}
+: _container(container), index_from_end(container.size()), index_from_start(0){
+    if(index < 0 || index > container.size()){
+        throw std::out_of_range("SideCrossIterator: iterator out of range");
+    }
+    current_index = index;
+}
 
 SideCrossIterator::SideCrossIterator(const SideCrossIterator& other)
 : _container(other._container), current_index(other.current_index), index_from_end(other.index_from_end),
